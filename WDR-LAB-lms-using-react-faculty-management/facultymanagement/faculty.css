@@ -1,0 +1,236 @@
+/* =====================================================
+   faculty.css
+   Styles for Faculty Management module
+   - Simple, clean, responsive styles
+   - Comments in Hinglish for easy understanding
+   ===================================================== */
+
+/* ----- Color variables ----- */
+:root {
+  --bg: #f7fafc;            /* page background */
+  --card: #ffffff;          /* card / form background */
+  --accent: #2563eb;        /* primary accent (blue) */
+  --muted: #6b7280;         /* muted text */
+  --danger: #dc2626;        /* danger / delete */
+  --success: #16a34a;       /* success */
+  --border: #e6e9ee;        /* light border */
+  --shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+/* ----- Page container ----- */
+.faculty-container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+  font-family: "Inter", system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+/* ----- Header / title ----- */
+.faculty-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.faculty-header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+}
+
+/* ----- Navigation bar for faculty module ----- */
+.faculty-navbar {
+  background: var(--card);
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.faculty-nav-link {
+  text-decoration: none;
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background .15s ease, color .15s ease;
+}
+
+.faculty-nav-link:hover {
+  background: rgba(37,99,235,0.08);
+}
+
+/* ----- Card (form / list wrap) ----- */
+.faculty-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.03);
+}
+
+/* ----- Form layout ----- */
+.faculty-form-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.faculty-input-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;   /* input width baseline */
+  margin-bottom: 12px;
+}
+
+.faculty-input-group label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.faculty-input, .faculty-textarea, .faculty-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.faculty-input:focus, .faculty-textarea:focus, .faculty-select:focus {
+  border-color: rgba(37,99,235,0.6);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.06);
+}
+
+.faculty-textarea { min-height: 84px; resize: vertical; }
+
+/* ----- Buttons ----- */
+.faculty-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+/* ----- List of faculty (cards) ----- */
+.faculty-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faculty-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  border-left: 4px solid var(--accent);
+  border: 1px solid var(--border);
+}
+
+.faculty-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.faculty-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.faculty-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* action buttons block in list */
+.faculty-item .actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* status badges */
+.badge {
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.badge.active { background: var(--success); }
+.badge.left   { background: var(--danger); }
+
+/* small helper text */
+.small-muted { color: var(--muted); font-size: 13px; }
+
+/* ----- Empty note / helper ----- */
+.faculty-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ----- Responsive: mobile adjustments ----- */
+@media (max-width: 720px) {
+  .faculty-form-row { flex-direction: column; }
+  .faculty-input-group { min-width: 100%; }
+  .faculty-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ----- Utility classes (optional) ----- */
+.text-right { text-align: right; }
+.mt-8 { margin-top: 8px; }
+.mb-8 { margin-bottom: 8px; }
+
+/* ----- Print friendly tweaks ----- */
+@media print {
+  body { background: #fff; color: #000; }
+  .faculty-navbar, .faculty-actions { display: none; }
+}
+
